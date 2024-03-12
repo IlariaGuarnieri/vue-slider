@@ -1,38 +1,23 @@
 const{createApp}=Vue;
 
 createApp({
-  data(){
-    // obbligatorio return che restituisce oggetto
-    return{
-      nome:'Ugo',
-      contatore: 0,
-      isEven: false,
-      nomeTemp: ''
-    }
-  },
-  methods: {
-    // incremento è un nostro metodo(una nostra funzione)
-    incremento(){
-      this.contatore++
-      if(this.contatore %2==0 ){
-        this.isEven= true
-      }else{
-        this.isEven= false
-      }
-    },
-    riscriviNome(){
-      this.nome = this.nomeTemp;
+  data() {
+    return {
+      images:[
+        'img/01.webp',
+        'img/02.webp',
+        'img/03.webp',
+        'img/04.webp',
+        'img/05.webp',
+      ],
+      counter: 0
+      isPlayerActive: true
     }
   },
 
-
-
-  // il contatore parte da 1 perche viene invocata al caricamento
-  // se devo lanciare funzioni di default uso mounted()
-  mounted() {
-    // richiamo incremento con il this
-    this.incremento()
-  },
+  methods:{
+    nextPrev(isNext){
+      
+    }
+  }
 }).mount('#app')
-
-
