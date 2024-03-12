@@ -55,14 +55,6 @@
                         <div class="my-thumbnails-wrapper">
                             <!-- qui ci vanno le immagini piccole -->
                             <img class="img-piccole" :src="images[counter]">
-                            <div
-                            v-for="(element, indice) in images"
-                            @click="counter = indice"
-                            class="circle"
-                            :class="{'active' : indice ===counter}"
-                            >
-
-                            </div>
                         </div>  
 
                             <!-- BOTTONE NEXT -->
@@ -73,7 +65,19 @@
                     </div>
                 </div>
 
-                
+
+<!--                 
+                <div
+                v-for="(element, indice) in images"
+                @click="counter = indice"
+                class="circle"
+                :class="{'active' : indice === counter}"
+                >
+
+                </div>
+                 -->
+
+
             </div>
         </div>
     </main>
