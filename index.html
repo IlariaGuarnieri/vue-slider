@@ -25,7 +25,12 @@
 
     <main>
         <div id="app" class="container-fluid p-5">
-            <div class="row text-center">
+            <!-- <div class="row text-center" > -->
+              <div 
+              class="slider" 
+              @mouseleave="isPlayerActive = false"
+              @mouseleave="isPlayerActive = true"
+              > 
                 <div class="col-12 p-3" id="my-before-carousel">
 
                 </div>
@@ -36,22 +41,32 @@
                       <!-- contenitore immagini -->
                         <div id="output" class="my-carousel-images">
                           <!-- contenuto delle immagini -->
+                          <img class="img" :src="images[counter]">
                         </div>
                         <!-- contenitore generale carousel -->
                         <div class="position-relative" id="output2" >
 
                             <!-- BOTTONE PREV indietro-->
-                            <div class="my-previous position-absolute">
+                            <div @click="nextPrev(true)" class="my-previous position-absolute">
                                 <span class="my-prev-hook"></span>
                             </div>
 
                             <!-- contenitore immagini piccole -->
                         <div class="my-thumbnails-wrapper">
                             <!-- qui ci vanno le immagini piccole -->
+                            <img class="img-piccole" :src="images[counter]">
+                            <div
+                            v-for="(element, indice) in images"
+                            @click="counter = indice"
+                            class="circle"
+                            :class="{'active' : indice ===counter}"
+                            >
+
+                            </div>
                         </div>  
 
                             <!-- BOTTONE NEXT -->
-                            <div class="my-next position-absolute">
+                            <div @click="nextPrev(false)"   class="my-next position-absolute">
                                 <span class="my-next-hook"></span>
                             </div>
                         </div>
