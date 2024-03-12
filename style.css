@@ -82,7 +82,8 @@ img{
 }
 
 .img-piccole{
-  
+width: 220px;
+object-fit: cover;
 }
 
 div.my-carousel-item img{
@@ -103,6 +104,7 @@ div.item-description{
 div#my-carousel .my-thumbnails-wrapper{
   flex-basis: 20%;
   height: 160px;
+  width: 1100px;
   display: flex;
   overflow-x: auto;
   background-color: aqua;
